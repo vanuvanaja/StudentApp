@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>StudentsApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  <servlet-name>var</servlet-name>
+  <servlet-class>com.jspiders.Myfirstservlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>var</servlet-name>
+  <url-pattern>/brt</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>login</servlet-name>
+  <servlet-class>com.jspiders.LoginServlet </servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>login</servlet-name>
+   <url-pattern>/LoginServlet</url-pattern>
+   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>login1</servlet-name>
+  <servlet-class>com.jspiders.LoginServelet1 </servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>login1</servlet-name>
+   <url-pattern>/LoginServlet1</url-pattern>
+   </servlet-mapping>
+ 
+ 
+ <servlet>
+  <servlet-name>login2</servlet-name>
+  <servlet-class>com.jspiders.LoginServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>login2</servlet-name>
+   <url-pattern>/LoginServlet2</url-pattern>
+   </servlet-mapping>
+ 
+ <servlet>
+  <servlet-name>loginpage</servlet-name>
+  <servlet-class>com.jspiders.LoginPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>loginpage</servlet-name>
+   <url-pattern>/loginpage</url-pattern>
+   </servlet-mapping>
+ 
+  <servlet>
+  <servlet-name>logout</servlet-name>
+  <servlet-class>com.jspiders.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>logout</servlet-name>
+   <url-pattern>/logout</url-pattern>
+   </servlet-mapping>
+ 
+ 
+ 
+ 
+ 
+ 
+  <servlet>
+  <servlet-name>searchengine</servlet-name>
+  <servlet-class>servlet.SearchEngine</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>searchengine</servlet-name>
+  <url-pattern>/SearchEngine</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>viewstudentInfo</servlet-name>
+  <servlet-class>com.jspiders.ViewAllStudentsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>viewstudentInfo</servlet-name>
+  <url-pattern>/ViewAllStudentsServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>viewstudentInfo1</servlet-name>
+  <servlet-class>com.jspiders.ViewAllStudentsServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>viewstudentInfo1</servlet-name>
+  <url-pattern>/ViewAllStudentsServlet1</url-pattern>
+  </servlet-mapping>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <servlet>
+  <servlet-name>redirect</servlet-name>
+  <servlet-class>com.jspiders.RedirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>redirect</servlet-name>
+  <url-pattern>/RedirectServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>delete</servlet-name>
+  <servlet-class>com.jspiders.DeleteStudentservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>delete</servlet-name>
+  <url-pattern>/DeleteStudentservlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  <servlet-name>delete1</servlet-name>
+  <servlet-class>com.jspiders.DeleteStudentServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>delete1</servlet-name>
+  <url-pattern>/DeleteStudentServlet1</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   <servlet>
+  <servlet-name>create</servlet-name>
+  <servlet-class>com.jspiders.CreateProfleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>create</servlet-name>
+  <url-pattern>/CreateProfleServlet</url-pattern>
+  </servlet-mapping>
+ 
+  
+  
+  <servlet>
+  <servlet-name>create1</servlet-name>
+  <servlet-class>com.jspiders.CreateProfileServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>create1</servlet-name>
+  <url-pattern>/CreateProfileServlet1</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+   <servlet>
+  <servlet-name>change</servlet-name>
+  <servlet-class>com.jspiders.ChangePasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>change</servlet-name>
+  <url-pattern>/ChangePasswordServlet</url-pattern>
+  </servlet-mapping>
+   
+   <servlet>
+  <servlet-name>change1</servlet-name>
+  <servlet-class>com.jspiders.ChangePasswordServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>change1</servlet-name>
+  <url-pattern>/ChangePasswordServlet1</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+  <servlet-name>edit</servlet-name>
+  <servlet-class>com.jspiders.EditStudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>edit</servlet-name>
+  <url-pattern>/EditStudentServlet</url-pattern>
+  </servlet-mapping>
+ 
+   <servlet>
+  <servlet-name>edit1</servlet-name>
+  <servlet-class>com.jspiders.EditStudentServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>edit1</servlet-name>
+  <url-pattern>/EditStudentServlet1</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  <servlet-name>ubdate</servlet-name>
+  <servlet-class>com.jspiders.UpdateStudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ubdate</servlet-name>
+  <url-pattern>/UpdateStudentServlet</url-pattern>
+  </servlet-mapping>
+  
+ 
+    <servlet>
+  <servlet-name>ubdate1</servlet-name>
+  <servlet-class> com.jspiders.UpdateStudentServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ubdate1</servlet-name>
+  <url-pattern>/UpdateStudentServlet1</url-pattern>
+  </servlet-mapping>
+ 
+ 
+ 
+  
+ <servlet>
+  <servlet-name>search</servlet-name>
+  <servlet-class>com.jspiders.SearchStudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>search</servlet-name>
+  <url-pattern>/SearchStudentServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>search1</servlet-name>
+  <servlet-class>com.jspiders.SearchStudetServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>search1</servlet-name>
+  <url-pattern>/SearchStudetServlet1</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+</web-app>
