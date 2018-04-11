@@ -1,0 +1,254 @@
+create database studentsapp_db;
+use studentsapp_db;
+
+--***************************************************--
+-- Table Creation Queries							 --
+--***************************************************--
+create table student_info
+( regno int not null,
+  firstname varchar(50),
+  middlename varchar(50),
+  lastname varchar(50),
+  email varchar(50),
+  mobile bigint,
+  birth_day int,
+  birth_month varchar(3),
+  birth_year int,
+  primary key(regno)
+);
+
+create table course_info
+( course_id int not null,
+  course_name varchar(50),
+  fee float,
+  duration varchar(25),
+  faculty varchar(50),
+  primary key(course_id)
+);
+
+create table guardian_info
+( regno int not null,
+  gfirstname varchar(50),
+  gmiddlename varchar(50),
+  glastname varchar(50),
+  mobile bigint,
+  primary key(regno)
+);
+
+create table student_addressinfo
+( regno int not null,
+  addr_type     varchar(10),
+  addr1		varchar(100),
+  addr2 	varchar(100),
+  landmark	varchar(100),
+  city		varchar(50),
+  pincode	int,
+  primary key(regno, addr_type)
+);
+
+create table student_courseinfo
+( regno int not null,
+  course_id int not null,
+  mock_rating	varchar(2),
+  primary key(regno, course_id)
+);
+
+
+create table student_otherinfo
+( regno int not null,
+  isadmin varchar(1),
+  password varchar(50),
+  login_attempts int,
+  last_login_time varchar(50),
+  primary key(regno)
+);
+
+
+create table education_type
+( type int not null,
+  name varchar(50),
+  primary key(type)
+);
+
+
+create table student_educationinfo
+( 
+  regno int not null,
+  type int not null,
+  college varchar(250),
+  university varchar(250),
+  branch varchar(50),
+  yop int,
+  percentage float,
+  primary key(regno,type)
+);
+
+
+create table requirement_info
+(req_id int,
+company_name varchar(50),
+designation varchar(50),
+skills varchar(50),
+interview_location varchar(50),
+job_location varchar(50),
+salary varchar(250),
+10_percentage int,
+12_percentage int,
+degree_percentage int,
+masterdegree_percentage int,
+other_info varchar(250),
+primary key (req_id)
+);
+
+create table student_interviewinfo
+(regno int,
+req_id int,
+isCleared varchar(1),
+feedback varchar(250),
+primary key (regno,req_id) );
+
+--***************************************************--
+-- Table Data Insertion Queries						 --
+--***************************************************--
+insert into student_info values (1, 'Praveen', 'NA', 'D', 'abc@gmail.com', 9445326450, 20, 'APR', 1995);
+insert into student_info values (2, 'Naveen', 'NA', 'A', 'xyz@gmail.com',  9880235641, 01, 'MAR', 1995);
+insert into student_info values (3, 'Raveen', 'NA', 'B', 'def@gmail.com', 9536412985, 05, 'OCT', 1981);
+insert into student_info values (4, 'Keveen', 'NA', 'C', 'ghi@gmail.com', 8521469703, 09, 'OCT', 1998);
+insert into student_info values (5, 'Chaveen', 'NA', 'E', 'efg@gmail.com', 9675325938, 09, 'JUL', 1994);
+
+insert into course_info values (1, 'Core Java', 8000.00, '4 Months', 'Madhu');
+insert into course_info values (2, 'Java EE', 5000.00, '2 Months', 'Praveen');
+insert into course_info values (3, 'SQL', 2000.20, '1 Months', 'Deekshit');
+insert into course_info values (4, 'HTML', 1000.50, '1 Months', 'Priyanka');
+insert into course_info values (5, 'Hibernate', 2500.25, '1 Months', 'Harsha');
+insert into course_info values (6, 'Springs', 2500.00, '1 Months', 'Harsha');
+insert into course_info values (7, 'AngularJS', 3500.50, '1 Months', 'Shashi');
+insert into course_info values (8, 'Web Services', 8000.00, '2 Months', 'Praveen');
+insert into course_info values (9, 'General Aptitude', 5000.50, '1 Months', 'Namratha');
+insert into course_info values (10, 'Android', 7000.45, '2 Months', 'Swetha');
+
+insert into guardian_info values (1, 'Dyamappa', 'NA', 'B S', 9956321784);
+insert into guardian_info values (2, 'Anjana', 'NA', 'D', 9886420364);
+insert into guardian_info values (3, 'Ravindra', 'NA', 'X', 7765314651);
+insert into guardian_info values (4, 'Arayana', 'NA', 'B C', 8652349134);
+insert into guardian_info values (5, 'Rejani', 'NA', 'Changappa', 9446349753);
+
+insert into student_addressinfo values (1, 'present', '#1, 2nd Cross, 3rd Main', 'ABC Nagar, 2nd Stage', 'Near Canara Bank', 'Bangalore', 560008);
+insert into student_addressinfo values (1, 'permanent', '#9, 8th Cross, 7th Main', 'XYZ Nagar, 4th Stage', 'Near Gurukul', 'Mangalore', 574142); 
+insert into student_addressinfo values (2, 'present', '#4A, 5 & 6 2nd Phase', 'Peenya Industrial Estate', 'Near Manufacturing Facilities', 'Bangalore', 560078);
+insert into student_addressinfo values (2, 'permanent', ' 2257/1 Vinoba Road', 'Near Kala Mandir', '', 'Chitradurga', 577527); 
+insert into student_addressinfo values (3, 'present', '# 217, 10 A Main', '2nd Floor, HRBR Layout, 1st Block', 'Near Horamavu Signal', 'Bangalore', 560004);
+insert into student_addressinfo values (3, 'permanent', '88 Door No,8th Main,9th Cross', 'K H Road,Saraswathipuram', 'Near Alma Master', 'Delhi', 110011); 
+insert into student_addressinfo values (4, 'present', '#37, 1st Floor Basco Court', 'Basavanagudi', 'NA', 'Bangalore', 560010);
+insert into student_addressinfo values (4, 'permanent', '115/ 48, East End C Main Road', 'Sri Kanva Pride, 2nd Floor', 'Jayanagar 9th Block', 'Hyderabad', 500012); 
+insert into student_addressinfo values (5, 'present', 'Sri Ram Mens PG, 2Nd Floor, Samrat Complex', 'Udayaravi Road,Kuvempunagar', 'Near Vijaya Bank', 'Bangalore', 560017);
+insert into student_addressinfo values (5, 'permanent', 'No.28, 4th B Cross , V Block, ', 'Koramangala Industrial Layout', 'Above Taj Paradise Hotel', 'Pune', 411041); 
+
+insert into student_courseinfo values (1, 1, '1*');
+insert into student_courseinfo values (1, 2, '1*');
+insert into student_courseinfo values (1, 3, '1*');
+insert into student_courseinfo values (1, 4, '1*');
+insert into student_courseinfo values (1, 5, '1*');
+insert into student_courseinfo values (1, 6, '1*');
+insert into student_courseinfo values (1, 7, '1*');
+insert into student_courseinfo values (1, 8, '1*');
+insert into student_courseinfo values (1, 9, '1*');
+insert into student_courseinfo values (1, 10,'1*');
+
+insert into student_courseinfo values (2, 1, '1*');
+insert into student_courseinfo values (2, 2, '2*');
+insert into student_courseinfo values (2, 3, '2');
+insert into student_courseinfo values (2, 4, '1');
+insert into student_courseinfo values (2, 5, null);
+insert into student_courseinfo values (2, 6, null);
+
+insert into student_courseinfo values (3, 1, '1*');
+insert into student_courseinfo values (3, 2, null);
+
+insert into student_courseinfo values (4, 1, null);
+insert into student_courseinfo values (4, 2, null);
+insert into student_courseinfo values (4, 3, null);
+insert into student_courseinfo values (4, 4, null);
+insert into student_courseinfo values (4, 5, null);
+insert into student_courseinfo values (4, 6, null);
+insert into student_courseinfo values (4, 8, null);
+
+insert into student_courseinfo values (5, 7, '1*');
+insert into student_courseinfo values (5, 10, '1*');
+
+insert into student_otherinfo values (1, 'Y', 'qwerty', 0, null);
+insert into student_otherinfo values (2, 'N', 'qwerty', 0, null);
+insert into student_otherinfo values (3, 'N', 'qwerty', 0, null);
+insert into student_otherinfo values (4, 'N', 'qwerty', 0, null);
+insert into student_otherinfo values (5, 'N', 'qwerty', 0, null);
+
+insert into education_type values (1, 'S.S.L.C (10th Standard)');
+insert into education_type values (2, '2nd P.U.C (12th Standard or +2)');
+insert into education_type values (3, 'Diploma (Under Graduation)');
+insert into education_type values (4, 'Degree (Graduation)');
+insert into education_type values (5, 'Master Degree (Post Graduation)');
+
+insert into student_educationinfo values (1, 1, 'Marimallappa High School, Mysore', 'Karnataka Secondary Education Examination Board', null, 1996, 78.5);
+insert into student_educationinfo values (1, 2, 'Marimallappa P.U. College, Mysore', 'Department of Pre-University Education, Karnataka', 'PCMB', 1998, 65);
+insert into student_educationinfo values (1, 4, 'A.P.S College of Engineering, Bangalore', 'Visvesvaraya Technological University, Karnataka', 'E&C', 2002, 65.5);
+
+insert into student_educationinfo values (2, 1, 'Bapuji High School, Chitradurga', 'Karnataka Secondary Education Examination Board', null, 2000, 68.59);
+insert into student_educationinfo values (2, 3, 'SJM Institute Of Technology, Chitradurga', 'Visvesvaraya Technological University, Karnataka', 'CS', 2003, 75.96);
+insert into student_educationinfo values (2, 4, 'SJM Institute Of Technology, Chitradurga', 'Visvesvaraya Technological University, Karnataka', 'IS', 2002, 86.4);
+
+insert into student_educationinfo values (3, 1, 'S R S High School, Delhi', 'Board of Higher Secondary Education Delhi', null, 2005, 59.75);
+insert into student_educationinfo values (3, 2, 'Anjan College, Delhi', 'Delhi Board of Senior Secondary Education', 'null', 2007, 61.2);
+insert into student_educationinfo values (3, 3, 'Shiva Institute Of Technology, Delhi', 'Delhi Technological University, Delhi', 'Mech.', 2010, 65.23);
+insert into student_educationinfo values (3, 4, 'Shiva Institute Of Technology, Delhi', 'Delhi Technological University, Delhi', 'Mech.', 2014, 78.2);
+insert into student_educationinfo values (3, 5, 'Shiva Institute Of Technology, Delhi', 'Delhi Technological University, Delhi', 'Mech.', 2017, 80);
+
+insert into student_educationinfo values (4, 1, 'SLV High School, Hyderabad','Board of Intermediate and Secondary Education, Hyderabad', null, 2012, 59.5);
+insert into student_educationinfo values (4, 2, 'Saraswati College, Hyderabad', 'Board of Intermediate and Secondary Education, Hyderabad', null, 2014, 58);
+insert into student_educationinfo values (4, 4, 'A.P.S College of Engineering, Bangalore', 'Visvesvaraya Technological University, Karnataka', 'E&C', 2016, 55.5);
+
+insert into student_educationinfo values (5, 1, 'Government High School, Pune', 'Maharashtra State Board of Secondary and Higher Secondary Education', null, 2009, 59.75);
+insert into student_educationinfo values (5, 2, 'Government College, Pune', 'Maharashtra State Board of Secondary and Higher Secondary Education', 'null', 2011, 61);
+insert into student_educationinfo values (5, 3, 'Government Institute Of Technology, Delhi', 'Maharashtra State Board of Technical Education', 'E&E', 2014, 65);
+insert into student_educationinfo values (5, 4, 'Government Institute Of Technology, Delhi', 'Maharashtra State Board of Technical Education', 'E&E', 2017, 78);
+
+insert into requirement_info values (1, 'Capgemini', 'Software Engineer', 'Java/J2EE', 'Bangalore', 'Any Where in India', 'As per comapany standrads', '60', '60', '60', '60', null);
+insert into requirement_info values (2, 'Cognizant', 'Junior Consultant', 'Java/J2EE/SQL/HTML', 'Bangalore', 'Bangalore', '2.5 LPA', '60', '60', '60', '60', 'First 3 months training will be in Chennai');
+insert into requirement_info values (3, 'Icicle Technologies', 'Developer', 'Java/J2EE/SQL/HTML/Hibernate/Springs', 'Bangalore', 'Mumbai', 'First 3 months 10K/month later 3 LPA', null, null, '60', '60', 'Candidate should be ready to work in Mumbai & Client location in Mumbai');
+insert into requirement_info values (4, 'Ascendum Solutions', 'Software Developer', 'Hibernate/Springs', 'Bangalore', 'Bangalore', 'First 3 months no salary later 1.8 LPA', null, null, null, null, 'Candidate should be ready to work in Client locations');
+insert into requirement_info values (5, 'Tech Mahindra', 'Software Consultant', 'Java', 'Bangalore', 'Any Where in India', '2.8 LPA', 55, 65, 60, 60, null);
+insert into requirement_info values (6, 'Infosys', 'Software Engineer', 'Any Programming Language', 'Bangalore', 'Any Where in India', '3.5 LPA', 75, 75, 75, 75, 'Candidate should be ready to work on any Technology');
+insert into requirement_info values (7, 'Wipro', 'Software Engineer', 'Any Programming Language preferably Java', 'Bangalore', 'Any Where in India', '3.0 LPA', 0, 0, 65, 65, 'Candidate should be ready to work on any Technology and any where in India');
+insert into requirement_info values (8, 'TestYentra', 'Software Engineer', 'Java/Java EE', 'Bangalore', 'Any Where in India', '3.0 LPA', 0, 0, 65, 65, 'Candidate should be ready to work on any Technology including Selenium');
+insert into requirement_info values (9, 'Prasanna Technologies', 'Software Engineer', 'Java/Java EE/Frameworks (Spring Mandatory)', 'Mangalore', 'Mangalore', 'As per comapany standrads', 0, 0, 65, 65, 'Candidate should be ready to work in Magalore');
+insert into requirement_info values (10, 'All State', 'Software Developer', 'Java EE', 'Bangalore', 'Bangalore', '6 LPA', 60, 60, 65, 65, null);
+
+insert into student_interviewinfo values (1, 1, 'N', 'Candidate failed in Aptitude round');
+insert into student_interviewinfo values (1, 5, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (1, 6, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (1, 10, 'Y', null);
+
+insert into student_interviewinfo values (2, 1, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (2, 2, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (2, 5, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (2, 9, 'Y', null);
+
+insert into student_interviewinfo values (3, 1, 'N', 'Candidate failed in Aptitude round');
+insert into student_interviewinfo values (3, 2, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (3, 3, 'N', 'Candidate failed in HR round');
+insert into student_interviewinfo values (3, 4, 'N', 'Candidate failed in HR round');
+insert into student_interviewinfo values (3, 5, 'N', 'Candidate failed in Logical Reasoning round');
+insert into student_interviewinfo values (3, 6, 'N', 'Candidate failed in Group Discussion round');
+insert into student_interviewinfo values (3, 7, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (3, 8, 'N', 'Candidate failed in HR round');
+
+insert into student_interviewinfo values (4, 1, 'N', 'Candidate failed in HR round');
+insert into student_interviewinfo values (4, 2, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (4, 3, 'N', 'Candidate failed in HR round');
+insert into student_interviewinfo values (4, 4, 'N', 'Candidate failed in Aptitude round');
+insert into student_interviewinfo values (4, 5, 'N', 'Candidate failed in Logical Reasoning round');
+insert into student_interviewinfo values (4, 6, 'N', 'Candidate failed in Group Discussion round');
+insert into student_interviewinfo values (4, 7, 'N', 'Candidate failed in Technical round');
+insert into student_interviewinfo values (4, 8, 'Y', null);
+
+insert into student_interviewinfo values (5, 6, 'Y', null);
+
